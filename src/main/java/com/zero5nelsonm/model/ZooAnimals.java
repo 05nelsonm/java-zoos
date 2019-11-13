@@ -19,4 +19,28 @@ public class ZooAnimals {
     @JoinColumn(name = "animalid")
     @JsonIgnoreProperties(value = "zooanimals")
     private Animal animal;
+
+    public ZooAnimals() {
+    }
+
+    public ZooAnimals(Zoo zoo, Animal animal) {
+        this.zoo = zoo;
+        this.animal = animal;
+    }
+
+    public Zoo getZoo() {
+        return zoo;
+    }
+
+    public void setZoo(Zoo zoo) {
+        this.zoo = zoo;
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
 }
