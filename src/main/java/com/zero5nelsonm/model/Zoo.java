@@ -21,4 +21,9 @@ public class Zoo {
     @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("zoo")
     private List<Telephone> telephones = new ArrayList<>();
+
+    @OneToMany(mappedBy = "zoo",
+            cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "zoo")
+    private List<ZooAnimals> zooanimals = new ArrayList<>();
 }
