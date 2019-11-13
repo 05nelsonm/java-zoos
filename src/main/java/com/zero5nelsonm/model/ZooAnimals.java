@@ -3,10 +3,12 @@ package com.zero5nelsonm.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Table(name = "zooanimals", uniqueConstraints = {@UniqueConstraint(columnNames = {"zooid", "animalid"})})
-public class ZooAnimals {
+public class ZooAnimals extends Auditable implements Serializable {
 
     @Id
     @ManyToOne
@@ -42,5 +44,19 @@ public class ZooAnimals {
 
     public void setAnimal(Animal animal) {
         this.animal = animal;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ZooAnimals)) return false;
+        ZooAnimals that = (ZooAnimals) o;
+        return Objects.equals(getZoo(), that.getZoo()) &&
+                Objects.equals(getAnimal(), that.getAnimal());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getZoo(), getAnimal());
     }
 }
