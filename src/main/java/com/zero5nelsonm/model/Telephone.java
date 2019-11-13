@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "telephones", uniqueConstraints = {@UniqueConstraint(columnNames = {"zooid", "phonenumber"})})
+@Table(name = "telephone", uniqueConstraints = {@UniqueConstraint(columnNames = {"zooid", "phonenumber"})})
 public class Telephone extends Auditable {
 
     @Id

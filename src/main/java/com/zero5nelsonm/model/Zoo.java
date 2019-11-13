@@ -1,14 +1,13 @@
 package com.zero5nelsonm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.validator.constraints.EAN;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "zoos")
+@Table(name = "zoo")
 public class Zoo extends Auditable {
 
     @Id
@@ -24,15 +23,14 @@ public class Zoo extends Auditable {
 
     @OneToMany(mappedBy = "zoo",
             cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "zoo")
+    @JsonIgnoreProperties("zoo")
     private List<ZooAnimals> zooanimals = new ArrayList<>();
 
     public Zoo() {
     }
 
-    public Zoo(String zooname, List<ZooAnimals> zooanimals) {
+    public Zoo(String zooname) {
         this.zooname = zooname;
-        this.zooanimals = zooanimals;
     }
 
     public long getZooid() {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "animals")
+@Table(name = "animal")
 public class Animal extends Auditable {
 
     @Id
@@ -20,7 +20,7 @@ public class Animal extends Auditable {
     @OneToMany(mappedBy = "animal",
             cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "animal")
-    private List<ZooAnimals> zooAnimals = new ArrayList<>();
+    private List<ZooAnimals> zooanimals = new ArrayList<>();
 
     public Animal() {
     }
@@ -46,10 +46,10 @@ public class Animal extends Auditable {
     }
 
     public List<ZooAnimals> getZooAnimals() {
-        return zooAnimals;
+        return zooanimals;
     }
 
-    public void setZooAnimals(List<ZooAnimals> zooAnimals) {
-        this.zooAnimals = zooAnimals;
+    public void setZooAnimals(List<ZooAnimals> zooanimals) {
+        this.zooanimals = zooanimals;
     }
 }
