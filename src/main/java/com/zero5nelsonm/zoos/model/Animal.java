@@ -1,4 +1,4 @@
-package com.zero5nelsonm.model;
+package com.zero5nelsonm.zoos.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
