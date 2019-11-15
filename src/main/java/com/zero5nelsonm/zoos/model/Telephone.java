@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "telephone", uniqueConstraints = {@UniqueConstraint(columnNames = {"zooid", "phonenumber"})})
+@Table(name = "telephone"/*, uniqueConstraints = {@UniqueConstraint(columnNames = {"zooid", "phonenumber"})}*/)
 public class Telephone extends Auditable {
 
     @Id
@@ -15,12 +15,12 @@ public class Telephone extends Auditable {
     @Column(nullable = false)
     private String phonetype;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false/*, unique = true*/)
     private String phonenumber;
 
     @ManyToOne
-    @JoinColumn(name = "zooid", nullable = false)
-    @JsonIgnoreProperties("telephones")
+    @JoinColumn(name = "zooid")
+    @JsonIgnoreProperties("zoo")
     private Zoo zoo;
 
     public Telephone() {

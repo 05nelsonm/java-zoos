@@ -17,7 +17,7 @@ public class Zoo extends Auditable {
     @Column(nullable = false, unique = true)
     private String zooname;
 
-    @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL/*, orphanRemoval = true*/)
     @JsonIgnoreProperties("zoo")
     private List<Telephone> telephones = new ArrayList<>();
 
@@ -29,8 +29,9 @@ public class Zoo extends Auditable {
     public Zoo() {
     }
 
-    public Zoo(String zooname) {
+    public Zoo(String zooname, List<ZooAnimals> zooanimals) {
         this.zooname = zooname;
+        this.zooanimals = zooanimals;
     }
 
     public long getZooid() {

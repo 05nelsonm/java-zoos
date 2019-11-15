@@ -20,7 +20,7 @@ public class Animal extends Auditable {
     @OneToMany(mappedBy = "animal",
             cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "animal")
-    private List<ZooAnimals> zooanimals = new ArrayList<>();
+    private List<ZooAnimals> zooAnimals = new ArrayList<>();
 
     public Animal() {
     }
@@ -46,10 +46,10 @@ public class Animal extends Auditable {
     }
 
     public List<ZooAnimals> getZooAnimals() {
-        return zooanimals;
+        return zooAnimals;
     }
 
     public void setZooAnimals(List<ZooAnimals> zooanimals) {
-        this.zooanimals = zooanimals;
+        this.zooAnimals = zooanimals;
     }
 }

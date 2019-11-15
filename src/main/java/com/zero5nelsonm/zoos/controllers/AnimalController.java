@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class AnimalController {
 
     /**
-     * @GET http://localhost:2019/animals/count
+     * http://localhost:2019/animals/count
      *
-     * @Return all animals
-     * @Return a count of how many zoos they can be found at
-     * @Return status OK
+     * Return all animals
+     * Return a count of how many zoos they can be found at
+     * Return status OK
      * */
 }
